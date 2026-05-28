@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TECHNICAL BRO JI OFFICIAL</title>
+
+<link rel="icon" href="logo.png">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================================================= */
+/* GLOBAL */
+/* ================================================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* ================================================= */
+/* CUSTOM SCROLLBAR */
+/* ================================================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(cyan,#00ffcc);
+border-radius:20px;
+}
+
+/* ================================================= */
+/* PARTICLES */
+/* ================================================= */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+.particles span{
+position:absolute;
+width:4px;
+height:4px;
+background:cyan;
+border-radius:50%;
+box-shadow:0 0 15px cyan;
+animation:particles 15s linear infinite;
+}
+
+@keyframes particles{
+
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh) scale(1);
+opacity:0;
+}
+
+}
+
+/* ================================================= */
+/* NAVBAR */
+/* ================================================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.navbar{
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:55px;
+filter:drop-shadow(0 0 15px cyan);
+}
+
+.logo h2{
+font-size:1.2rem;
+font-weight:700;
+color:cyan;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+position:relative;
+transition:.4s;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:cyan;
+left:0;
+bottom:-6px;
+transition:.4s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.nav-links a:hover{
+color:cyan;
+}
+
+.nav-icons{
+display:flex;
+gap:20px;
+}
+
+.nav-icons i{
+font-size:20px;
+cursor:pointer;
+color:cyan;
+transition:.4s;
+}
+
+.nav-icons i:hover{
+transform:scale(1.2);
+}
+
+/* ================================================= */
+/* HERO */
+/* ================================================= */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero-banner{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+animation:zoom 12s infinite alternate;
+}
+
+@keyframes zoom{
+
+0%{
+transform:scale(1);
+}
+
+100%{
+transform:scale(1.1);
+}
+
+}
+
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom,
+rgba(0,0,0,.6),
+rgba(0,0,0,.9));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+max-width:1000px;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:5rem;
+line-height:1.1;
+font-weight:800;
+background:linear-gradient(to right,cyan,#00ffcc);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(0,255,255,.4);
+}
+
+.hero-content p{
+margin-top:20px;
+font-size:1.2rem;
+color:#ddd;
+}
+
+.typing{
+margin-top:25px;
+font-size:1.5rem;
+font-weight:600;
+color:cyan;
+height:40px;
+}
+
+.hero-buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+backdrop-filter:blur(12px);
+transition:.4s;
+}
+
+.hero-buttons a:hover{
+background:linear-gradient(45deg,cyan,#00ffcc);
+color:black;
+transform:translateY(-8px);
+box-shadow:0 0 25px cyan;
+}
+
+.stats{
+margin-top:50px;
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+.stat-card{
+padding:25px;
+min-width:180px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.stat-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
+}
+
+.stat-card h2{
+font-size:2rem;
+color:cyan;
+}
+
+/* ================================================= */
+/* COMMON */
+/* ================================================= */
+
+section{
+padding:120px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:3rem;
+color:cyan;
+}
+
+/* ================================================= */
+/* ABOUT */
+/* ================================================= */
+
+.about-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:30px;
+box-shadow:0 0 30px rgba(0,255,255,.25);
+}
+
+.about-content p{
+line-height:1.9;
+color:#ddd;
+}
+
+.about-cards{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.glass-card{
+padding:25px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.glass-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
+}
+
+/* ================================================= */
+/* VIDEOS */
+/* ================================================= */
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+}
+
+.video-card{
+padding:15px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.video-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
+}
+
+.video-card iframe{
+width:100%;
+height:300px;
+border:none;
+border-radius:20px;
+}
+
+/* ================================================= */
+/* PRODUCTS */
+/* ================================================= */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product-card{
+padding:20px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.product-card:hover{
+transform:translateY(-12px);
+box-shadow:0 0 30px cyan;
+}
+
+.wishlist{
+position:absolute;
+top:20px;
+right:20px;
+width:40px;
+height:40px;
+background:rgba(255,255,255,.1);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:cyan;
+}
+
+.product-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.product-card h3{
+margin-top:20px;
+}
+
+.rating{
+margin-top:10px;
+color:gold;
+}
+
+.price{
+margin-top:10px;
+font-size:1.3rem;
+font-weight:700;
+color:cyan;
+}
+
+.product-card button{
+margin-top:20px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:50px;
+font-weight:700;
+cursor:pointer;
+background:linear-gradient(45deg,cyan,#00ffcc);
+}
+
+/* ================================================= */
+/* ARTICLES */
+/* ================================================= */
+
+.article-top{
+display:flex;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.article-top input,
+.article-top select{
+padding:15px;
+border:none;
+border-radius:15px;
+background:#10192d;
+color:white;
+min-width:250px;
+}
+
+.article-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.article-card{
+padding:20px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.article-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
+}
+
+.article-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.article-card h3{
+margin-top:20px;
+}
+
+.article-card button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,cyan,#00ffcc);
+font-weight:700;
+cursor:pointer;
+}
+
+/* ================================================= */
+/* AI SECTION */
+/* ================================================= */
+
+.ai-box{
+max-width:700px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,.05);
+border-radius:30px;
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.ai-box select,
+.ai-box button{
+width:100%;
+padding:18px;
+margin-top:20px;
+border:none;
+border-radius:15px;
+font-size:1rem;
+}
+
+.ai-box button{
+background:linear-gradient(45deg,cyan,#00ffcc);
+font-weight:700;
+cursor:pointer;
+}
+
+#result{
+margin-top:30px;
+font-size:1.2rem;
+color:cyan;
+font-weight:600;
+}
+
+/* ================================================= */
+/* CONTACT */
+/* ================================================= */
+
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-form{
+padding:35px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:16px;
+margin-bottom:20px;
+border:none;
+border-radius:15px;
+background:#0f172a;
+color:white;
+}
+
+.contact-form button{
+padding:15px 30px;
+border:none;
+border-radius:50px;
+font-weight:700;
+background:linear-gradient(45deg,cyan,#00ffcc);
+cursor:pointer;
+}
+
+.social-box{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.social-links{
+display:flex;
+gap:20px;
+margin-top:30px;
+}
+
+.social-links a{
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(255,255,255,.05);
+color:cyan;
+font-size:22px;
+transition:.4s;
+}
+
+.social-links a:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px cyan;
+}
+
+/* ================================================= */
+/* FAQ */
+/* ================================================= */
+
+.faq-container{
+max-width:900px;
+margin:auto;
+}
+
+.faq{
+margin-bottom:20px;
+padding:25px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.faq h3{
+color:cyan;
+}
+
+/* ================================================= */
+/* FOOTER */
+/* ================================================= */
+
+footer{
+padding:60px 20px;
+text-align:center;
+background:#02050f;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer img{
+width:90px;
+margin-bottom:20px;
+filter:drop-shadow(0 0 20px cyan);
+}
+
+/* ================================================= */
+/* TOP BUTTON */
+/* ================================================= */
+
+#topBtn{
+position:fixed;
+bottom:30px;
+right:30px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:linear-gradient(45deg,cyan,#00ffcc);
+cursor:pointer;
+font-size:18px;
+display:none;
+z-index:999;
+}
+
+/* ================================================= */
+/* RESPONSIVE */
+/* ================================================= */
+
+@media(max-width:991px){
+
+.hero-content h1{
+font-size:3rem;
+}
+
+.about-container,
+.contact-container{
+grid-template-columns:1fr;
+}
+
+.about-cards{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- PARTICLES -->
+
+<div class="particles">
+<span style="left:10%;animation-duration:15s;"></span>
+<span style="left:20%;animation-duration:20s;"></span>
+<span style="left:30%;animation-duration:18s;"></span>
+<span style="left:40%;animation-duration:25s;"></span>
+<span style="left:50%;animation-duration:17s;"></span>
+<span style="left:60%;animation-duration:23s;"></span>
+<span style="left:70%;animation-duration:16s;"></span>
+<span style="left:80%;animation-duration:21s;"></span>
+<span style="left:90%;animation-duration:19s;"></span>
+</div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+<img src="logo.png">
+<h2>TECHNICAL BRO JI</h2>
+</div>
+
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#articles">Articles</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="nav-icons">
+<i class="fas fa-ellipsis-v"></i>
+<i class="fas fa-bars"></i>
+</div>
+
+</div>
+
+</header>
+
+<div id="adminPanel" style="
+position:fixed;
+top:90px;
+right:20px;
+width:320px;
+background:rgba(0,0,0,.9);
+padding:25px;
+border-radius:25px;
+z-index:9999;
+display:none;
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 0 25px cyan;
+">
+
+<h2 style="
+text-align:center;
+margin-bottom:20px;
+color:cyan;
+">
+Admin Panel
+</h2>
+
+<input
+type="password"
+id="adminPassword"
+placeholder="Enter Password"
+style="
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-bottom:15px;
+background:#0f172a;
+color:white;
+">
+
+<button
+onclick="loginAdmin()"
+style="
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,cyan,#00ffcc);
+font-weight:700;
+cursor:pointer;
+">
+Login
+</button>
+
+<div id="adminControls" style="display:none; margin-top:20px;">
+
+<input
+type="text"
+id="newArticleTitle"
+placeholder="Article Title"
+style="
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-bottom:15px;
+background:#0f172a;
+color:white;
+">
+
+<textarea
+id="newArticleDesc"
+placeholder="Article Description"
+rows="4"
+style="
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-bottom:15px;
+background:#0f172a;
+color:white;
+"></textarea>
+
+<input
+type="text"
+id="newArticleImage"
+placeholder="Image URL"
+style="
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+margin-bottom:15px;
+background:#0f172a;
+color:white;
+">
+
+<button
+onclick="addArticle()"
+style="
+width:100%;
+padding:15px;
+border:none;
+border-radius:15px;
+background:linear-gradient(45deg,cyan,#00ffcc);
+font-weight:700;
+cursor:pointer;
+">
+Add Article
+</button>
+
+</div>
+
+</div>
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="banner.jpg" class="hero-banner">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<h1>TECHNICAL BRO JI OFFICIAL</h1>
+
+<p>
+Technology • Gadgets • Science • Education
+</p>
+
+<div class="typing"></div>
+
+<div class="hero-buttons">
+
+<a href="https://youtube.com/@tbjofficial81?si=a2utDJW34Y_bevtC">
+Subscribe on YouTube
+</a>
+
+<a href="#videos">
+Watch Videos
+</a>
+
+<a href="#products">
+Explore Gadgets
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>100K+</h2>
+<p>Subscribers</p>
+</div>
+
+<div class="stat-card">
+<h2>500+</h2>
+<p>Videos</p>
+</div>
+
+<div class="stat-card">
+<h2>1M+</h2>
+<p>Views</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-title">
+<h2>About The Channel</h2>
+</div>
+
+<div class="about-container">
+
+<div class="about-image">
+<img src="banner.jpg">
+</div>
+
+<div class="about-content">
+
+<p>
+Hello friends 👋 Welcome to my YouTube channel ‘Technical Bro Ji’.
+Here you find amazing videos related to technology,
+gadgets, educational content and product suggestions.
+We help people understand technology in a simple way and
+suggest the best products for better life.
+</p>
+
+<div class="about-cards">
+
+<div class="glass-card">
+<h3>Founder</h3>
+<p>Yashwant Gumasta</p>
+</div>
+
+<div class="glass-card">
+<h3>Co-Founder</h3>
+<p>Editable Placeholder</p>
+</div>
+
+<div class="glass-card">
+<h3>Mission</h3>
+<p>Finding best and suggesting best.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+<div class="section-title">
+<h2>Featured Videos</h2>
+</div>
+
+<div class="video-grid">
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/Ho0v7IJ3NSg"></iframe>
+</div>
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/zDJG_dCyDJo"></iframe>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<div class="section-title">
+<h2>Affiliate Products</h2>
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<div class="wishlist">
+<i class="fas fa-heart"></i>
+</div>
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+
+<h3>iPhone 15 Pro</h3>
+
+<p>Premium flagship smartphone.</p>
+
+<div class="rating">
+★★★★★
+</div>
+
+<div class="price">
+₹1,29,999
+</div>
+
+<button>Buy Now</button>
+
+</div>
+
+<div class="product-card">
+
+<div class="wishlist">
+<i class="fas fa-heart"></i>
+</div>
+
+<img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12">
+
+<h3>Smart Watch</h3>
+
+<p>Luxury smartwatch for creators.</p>
+
+<div class="rating">
+★★★★★
+</div>
+
+<div class="price">
+₹9,999
+</div>
+
+<button>Buy Now</button>
+
+</div>
+
+<div class="product-card">
+
+<div class="wishlist">
+<i class="fas fa-heart"></i>
+</div>
+
+<img src="https://images.unsplash.com/photo-1517336714739-489689fd1ca8">
+
+<h3>Gaming Laptop</h3>
+
+<p>Ultimate gaming performance.</p>
+
+<div class="rating">
+★★★★★
+</div>
+
+<div class="price">
+₹79,999
+</div>
+
+<button>Buy Now</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ARTICLES -->
+
+<section id="articles">
+
+<div class="section-title">
+<h2>Articles & Blogs</h2>
+</div>
+
+<div class="article-top">
+
+<input type="text" placeholder="Search articles...">
+
+<select>
+<option>All Categories</option>
+<option>Tech News</option>
+<option>Science Blogs</option>
+<option>Educational</option>
+</select>
+
+</div>
+
+<div class="article-grid">
+
+<div class="article-card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+<h3>Best Smartphones in 2026</h3>
+
+<p>Explore the latest flagship phones and AI features.</p>
+
+<button>Read More</button>
+
+</div>
+
+<div class="article-card">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+
+<h3>Future of AI Technology</h3>
+
+<p>How AI is changing our digital world rapidly.</p>
+
+<button>Read More</button>
+
+</div>
+
+<div class="article-card">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+
+<h3>Top Gaming Gadgets</h3>
+
+<p>Best gaming accessories for pro players.</p>
+
+<button>Read More</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AI SECTION -->
+
+<section>
+
+<div class="section-title">
+<h2>AI Product Suggester</h2>
+</div>
+
+<div class="ai-box">
+
+<select id="budget">
+<option>Select Budget</option>
+<option>20000</option>
+<option>50000</option>
+<option>100000</option>
+</select>
+
+<select id="category">
+<option>Select Category</option>
+<option>Smartphone</option>
+<option>Laptop</option>
+<option>Gaming Gadget</option>
+</select>
+
+<button onclick="suggestProduct()">
+Get AI Recommendation
+</button>
+
+<div id="result"></div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section>
+
+<div class="section-title">
+<h2>FAQs</h2>
+</div>
+
+<div class="faq-container">
+
+<div class="faq">
+<h3>What type of videos are uploaded?</h3>
+<p>Technology, gadgets, educational and science related content.</p>
+</div>
+
+<div class="faq">
+<h3>Do you recommend products?</h3>
+<p>Yes, we suggest best gadgets and useful products.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>Contact Us</h2>
+</div>
+
+<div class="contact-container">
+
+<div class="contact-form">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6" placeholder="Your Message"></textarea>
+
+<button>Send Message</button>
+
+</div>
+
+<div class="social-box">
+
+<h2>Let's Connect</h2>
+
+<p style="margin-top:20px;color:#ccc;">
+technicalbrojifinance@gmail.com
+</p>
+
+<div class="social-links">
+
+<a href="https://youtube.com/@tbjofficial81?si=a2utDJW34Y_bevtC">
+<i class="fab fa-youtube"></i>
+</a>
+
+<a href="https://www.instagram.com/revintiq0999?igsh=MXR1NGFldWdhY3J5Mw==">
+<i class="fab fa-instagram"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<img src="logo.png">
+
+<h2>TECHNICAL BRO JI OFFICIAL</h2>
+
+<p style="margin-top:15px;color:#999;">
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+<!-- TOP BUTTON -->
+
+<button id="topBtn">
+<i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+
+/* ======================================= */
+/* TYPING EFFECT */
+/* ======================================= */
+
+const text = "Finding Best & Suggesting B
